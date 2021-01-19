@@ -1,0 +1,40 @@
+.home {
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	height: calc(100vh - 61px);
+	background-image: linear-gradient(to left, #445175, #445175);
+}
+.home-content {
+	width: 560px;
+	min-width: 250px;
+	text-align: center;
+}
+.home-content h1,
+.home-content h3 {
+	font-weight: 400;
+}
+.home-content h1 {
+	margin-bottom: 15px;
+	font-size: 1.9rem;
+	color: white;
+}
+.home-content h3 {
+	font-size: 1rem;
+	color: white;
+}
+button.sign-in {
+	border: none;
+	outline: none;
+	padding: 10px 35px;
+	background-color: rgba(86, 88, 231, 0.911);
+	cursor: pointer;
+	border-radius: 3px;
+	color: rgb(255, 255, 255);
+	margin-top: 20px;
+	transition: all 0.3s ease-in-out;
+	font-size: 18px;
+}
+button.sign-in:hover {
+	background-color: rgba(44, 47, 228, 0.911);
+}

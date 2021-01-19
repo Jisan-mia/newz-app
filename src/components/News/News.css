@@ -1,0 +1,22 @@
+.article-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 40px;
+	padding: 40px 0;
+}
+
+.loading {
+	font-size: 16px;
+	font-weight: 500;
+}
+@media (max-width: 1024px) {
+	.article-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.article-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
