@@ -72,7 +72,7 @@ const News = () => {
 				))}
 			</div>
 			<div className="container">
-				<small className="loading">{loading && "loadding..."}</small>
+				<small className="loading">{loading && "loadding news..."}</small>
 			</div>
 
 			<div className="container article-container">
