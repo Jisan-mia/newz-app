@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { SearchContext } from "../../App";
 import NewsCard from "../NewsCard/NewsCard";
 import "./News.css";
@@ -52,7 +51,6 @@ const News = () => {
 		setLoading(false);
 	};
 
-	let history = useHistory();
 	const handleCategory = (category) => {
 		console.log(category);
 	};
