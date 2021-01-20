@@ -36,7 +36,11 @@ const News = () => {
 		try {
 			let res = await axios.get(url);
 			let data = res.data.articles;
-			setArticles(data);
+			if (data.length) {
+				setArticles(data);
+			} else {
+				alert("No matched articles found");
+			}
 		} catch (error) {
 			console.log(error.response.status);
 			console.log(error.response.statusText);
