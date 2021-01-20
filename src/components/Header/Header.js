@@ -30,9 +30,11 @@ const Header = () => {
 			.then(() => {
 				// Sign-out successful.
 				const newUserInfo = { ...loggedInUser };
-				newUserInfo.isSignedIn = false;
+				newUserInfo.isLoggedIn = false;
+				newUserInfo.name = "";
 				newUserInfo.email = "";
 				newUserInfo.password = "";
+				setLoggedInUser(newUserInfo);
 			})
 			.catch((error) => {
 				console.log(error.message);
@@ -76,7 +78,7 @@ const Header = () => {
 						</li>
 					)}
 					<li>
-						{loggedInUser ? (
+						{loggedInUser.email ? (
 							<button onClick={handleLogOUt} className=" logout">
 								Logout
 							</button>

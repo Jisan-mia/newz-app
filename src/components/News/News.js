@@ -40,7 +40,6 @@ const News = () => {
 			</h1>
 
 			<div className="container news-category">
-				<small className="loading">{loading && "loadding..."}</small>
 				{categories.map((category, index) => (
 					<span
 						key={index}
@@ -49,6 +48,9 @@ const News = () => {
 						{category}
 					</span>
 				))}
+			</div>
+			<div className="container">
+				<small className="loading">{loading && "loadding..."}</small>
 			</div>
 
 			<div className="container article-container">
