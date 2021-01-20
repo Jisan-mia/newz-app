@@ -13,9 +13,11 @@ const News = () => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		loadNews();
+		// loadNews();
+		loadGNews();
 	}, [searchTerm]);
 
+	//fetching news from newsapi.org
 	const loadNews = async () => {
 		const url = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=8c4c0b73170440dc909e77536dcb391f`;
 		const response = await axios.get(url);
@@ -25,6 +27,24 @@ const News = () => {
 			alert("Not matched articles found");
 		}
 
+		setLoading(false);
+	};
+
+	//fetching news from gnews api
+	const loadGNews = async () => {
+		const url = `https://gnews.io/api/v4/search?q=${searchTerm}&token=ac6135e6a868015d2c1276cd8aa8081f`;
+		try {
+			let res = await axios.get(url);
+			let data = res.data.articles;
+			setArticles(data);
+		} catch (error) {
+			console.log(error.response.status);
+			console.log(error.response.statusText);
+			alert(
+				error.response.statusText,
+				"Something is going wrong or you acced the req limit"
+			);
+		}
 		setLoading(false);
 	};
 
