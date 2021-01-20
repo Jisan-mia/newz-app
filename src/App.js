@@ -13,7 +13,7 @@ export const SearchContext = createContext();
 export const UserContext = createContext();
 
 const App = () => {
-	const [searchTerm, setSearchTerm] = useState("technology");
+	const [searchTerm, setSearchTerm] = useState("business");
 	const [loggedInUser, setLoggedInUser] = useState({});
 
 	return (
