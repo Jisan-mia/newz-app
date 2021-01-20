@@ -17,7 +17,7 @@ const News = () => {
 	}, [searchTerm]);
 
 	const loadNews = async () => {
-		const url = `http://newsapi.org/v2/everything?q=${searchTerm}&apiKey=8c4c0b73170440dc909e77536dcb391f`;
+		const url = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=8c4c0b73170440dc909e77536dcb391f`;
 		const response = await axios.get(url);
 		if (response.data.articles.length) {
 			setArticles(response.data.articles);
