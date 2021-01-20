@@ -7,7 +7,7 @@ import "./Header.css";
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
-	const [search, setSearch] = useState("technology");
+	const [search, setSearch] = useState("business");
 	const [searchTerm, setSearchTerm] = useContext(SearchContext);
 	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
