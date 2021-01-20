@@ -57,7 +57,7 @@
 	cursor: pointer;
 }
 .article-info .more-info .read-btn:hover {
-	background: rgb(20 23 227 / 68%);
+	background: royalblue;
 }
 
 .article-info .article-author small {

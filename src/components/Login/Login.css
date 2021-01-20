@@ -1,0 +1,68 @@
+.login-page {
+	background: rgba(83, 15, 255, 0.09);
+	height: calc(100vh - 60.594px);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.login-form {
+	background: white;
+	padding: 35px 25px;
+	border-radius: 5px;
+	box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.1);
+	min-width: 250px;
+	width: 360px;
+}
+.login-form .form-group {
+	margin-bottom: 10px;
+}
+.login-form .form-group label {
+}
+.login-form .form-group input {
+	width: 100%;
+	border: 1px solid lightblue;
+	outline: none;
+	padding: 8px 15px 8px 8px;
+	border-radius: 3px;
+	font-size: 16px;
+	margin-top: 2px;
+	color: #707070;
+}
+.login-form .loggin-btn {
+	border: none;
+	outline: none;
+	padding: 10px;
+	width: 100%;
+	font-size: 16px;
+	cursor: pointer;
+	color: white;
+	background: royalblue;
+	transition: all 0.3s ease-in-out;
+}
+.login-form .loggin-btn:hover {
+	background-color: rgba(72, 114, 241, 0.89);
+}
+
+.login-form .create-or-login {
+	margin-top: 10px;
+}
+
+.login-form .create-or-login p {
+	text-align: right;
+	font-size: 0.967em;
+	font-weight: 400;
+	color: rgb(100 100 100 / 86%);
+}
+
+.login-form .create-or-login p span {
+	color: rgb(11, 64, 223);
+	cursor: pointer;
+}
+.login-form .form-group .error-msg {
+	font-size: 14px;
+	font-weight: 400;
+	color: rgb(245, 40, 40);
+}

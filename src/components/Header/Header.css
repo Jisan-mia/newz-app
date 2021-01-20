@@ -73,6 +73,20 @@
 .nav .nav_list li a:hover {
 	background: rgb(80 80 80 / 74%);
 }
+
+.nav_list .logout {
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #dfdfdf;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 20px 25px;
+}
+.nav_list .logout:hover {
+	background: rgb(80 80 80 / 74%);
+}
+
 .hamburger {
 	display: none;
 	flex-direction: column;

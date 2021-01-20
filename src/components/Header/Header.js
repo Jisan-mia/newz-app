@@ -1,11 +1,15 @@
+import firebase from "firebase/app";
+import "firebase/auth";
 import React, { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { SearchContext } from "../../App";
+import { SearchContext, UserContext } from "../../App";
 import "./Header.css";
+
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
 	const [search, setSearch] = useState("technology");
 	const [searchTerm, setSearchTerm] = useContext(SearchContext);
+	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -16,6 +20,23 @@ const Header = () => {
 	let history = useHistory();
 	const brandHandle = () => {
 		history.push("/");
+	};
+
+	const handleLogOUt = () => {
+		console.log("sign out");
+		firebase
+			.auth()
+			.signOut()
+			.then(() => {
+				// Sign-out successful.
+				const newUserInfo = { ...loggedInUser };
+				newUserInfo.isSignedIn = false;
+				newUserInfo.email = "";
+				newUserInfo.password = "";
+			})
+			.catch((error) => {
+				console.log(error.message);
+			});
 	};
 
 	return (
@@ -47,15 +68,23 @@ const Header = () => {
 							News
 						</Link>
 					</li>
+					{loggedInUser.isLoggedIn && (
+						<li>
+							<Link to="#" className="nav_item">
+								{loggedInUser.name}
+							</Link>
+						</li>
+					)}
 					<li>
-						<Link to="#" className="nav_item">
-							Jisan
-						</Link>
-					</li>
-					<li>
-						<Link to="/login" className="login ">
-							Login
-						</Link>
+						{loggedInUser ? (
+							<button onClick={handleLogOUt} className=" logout">
+								Logout
+							</button>
+						) : (
+							<Link to="/login" className="login ">
+								login
+							</Link>
+						)}
 					</li>
 				</ul>
 			</div>
